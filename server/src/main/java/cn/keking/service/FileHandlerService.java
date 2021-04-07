@@ -10,6 +10,7 @@ import com.aspose.cad.Color;
 import com.aspose.cad.fileformats.cad.CadDrawTypeMode;
 import com.aspose.cad.imageoptions.CadRasterizationOptions;
 import com.aspose.cad.imageoptions.PdfOptions;
+import jodd.util.URLDecoder;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.ImageType;
 import org.apache.pdfbox.rendering.PDFRenderer;
@@ -271,7 +272,7 @@ public class FileHandlerService {
             suffix = WebUtils.suffixFromUrl(url);
         }
         attribute.setType(type);
-        attribute.setName(fileName);
+        attribute.setName(URLDecoder.decode(fileName));
         attribute.setSuffix(suffix);
         attribute.setUrl(url);
         if (req != null) {
